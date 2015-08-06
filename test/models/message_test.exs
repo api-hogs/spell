@@ -3,7 +3,7 @@ defmodule Spell.MessageTest do
 
   alias Spell.Message
 
-  @valid_attrs %{body: "some content", read: true, receiver: "some content", sender: "some content"}
+  @valid_attrs %{body: "some content", read: true, recipient: "some content", sender: "some content"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do

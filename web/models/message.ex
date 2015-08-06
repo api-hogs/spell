@@ -4,8 +4,8 @@ defmodule Spell.Message do
   schema "messages" do
     field :body, :string
     field :read, :boolean, default: false
-    belongs_to :receiver, Spell.Receiver
-    belongs_to :sender, Spell.Sender
+    belongs_to :recipient, Spell.User
+    belongs_to :sender, Spell.User
 
     timestamps
   end
