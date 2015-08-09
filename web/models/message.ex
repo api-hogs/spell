@@ -10,7 +10,7 @@ defmodule Spell.Message do
     timestamps
   end
 
-  @required_fields ~w(body read)
+  @required_fields ~w(body read sender_id recipient_id)
   @optional_fields ~w()
 
   @doc """

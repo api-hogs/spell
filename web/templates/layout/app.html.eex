@@ -26,7 +26,7 @@
       <%= @inner %>
 
     </div> <!-- /container -->
+    <script src="<%= static_path(@conn, "/js/phoenix.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
-    
   </body>
 </html>

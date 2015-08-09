@@ -2,7 +2,7 @@ defmodule Spell.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "rooms:*", Spell.RoomChannel
+  channel "messages:*", Spell.MessagesChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
