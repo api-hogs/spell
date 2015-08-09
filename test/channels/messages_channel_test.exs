@@ -19,9 +19,10 @@ defmodule Spell.MessagesChannelTest do
     {:ok, socket_1: socket_1, socket_2: socket_2, user_1: user_1, user_2: user_2}
   end
 
-  test "message_sent", %{socket_1: socket_1, user_2: user_2} do
+  test "message_sent", %{socket_1: socket_1, user_1: user_1, user_2: user_2} do
     push socket_1, "message_sent", %{"body" => "Hello", "recipient_id" => user_2.id}
-    assert_broadcast "message_sent", %Message{}
-    assert_broadcast "message_received", %Message{}
+    message = %{sender_id: user_1.id, recipient_id: user_2.id, read: false, body: "Hello"}
+    assert_broadcast "message_sent", message
+    assert_broadcast "message_received", message
   end
 end
