@@ -1,4 +1,4 @@
-defmodule Spell.MessagesChannel do
+defmodule Spell.MessageChannel do
   use Spell.Web, :channel
 
   alias Spell.Repo
