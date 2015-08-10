@@ -2,7 +2,6 @@ defmodule Spell.MessageChannel do
   use Spell.Web, :channel
 
   alias Spell.Repo
-  alias Spell.User
   alias Spell.Message
 
   def join("messages:" <> user_id, _payload, socket) do
@@ -35,7 +34,7 @@ defmodule Spell.MessageChannel do
   end
 
   defp authorized?(user_id) do
-    Repo.get(User, user_id) != nil
+    true
   end
 
   defp create_message(user_id, payload) do

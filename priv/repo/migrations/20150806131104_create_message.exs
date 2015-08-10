@@ -5,8 +5,8 @@ defmodule Spell.Repo.Migrations.CreateMessage do
     create table(:messages) do
       add :body, :text
       add :read, :boolean, default: false
-      add :recipient_id, references(:users)
-      add :sender_id, references(:users)
+      add :recipient_id, :integer
+      add :sender_id, :integer
 
       timestamps
     end
