@@ -4,8 +4,8 @@ defmodule Spell.MessageChannel do
   alias Spell.Repo
   alias Spell.Message
 
-  def join("messages:" <> user_id, _payload, socket) do
-    if authorized?(user_id) do
+  def join("messages:" <> user_id, %{"token" => token}, socket) do
+    if authorized?(user_id, token) do
       {:ok, assign(socket, :user_id, user_id)}
     else
       {:error, %{reason: "unauthorized"}}
@@ -33,8 +33,8 @@ defmodule Spell.MessageChannel do
     {:noreply, socket}
   end
 
-  defp authorized?(user_id) do
-    true
+  defp authorized?(user_id, token) do
+    Spell.Redis.get(token) == user_id
   end
 
   defp create_message(user_id, payload) do

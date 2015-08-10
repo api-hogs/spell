@@ -2,15 +2,22 @@ defmodule Spell.MessageChannelTest do
   use Spell.ChannelCase
 
   alias Spell.MessageChannel
-  alias Spell.Repo
-  alias Spell.Message
+  alias Spell.Redis
 
   setup do
+    Redis.set("token1", 1)
+    Redis.set("token2", 2)
+
     {:ok, _, socket_1} = subscribe_and_join(MessageChannel, "messages:1",
-    %{"user_id" => 1})
+    %{"token" => "token1"})
 
     {:ok, _, socket_2} = subscribe_and_join(MessageChannel, "messages:2",
-    %{"user_id" => 2})
+    %{"token" => "token2"})
+
+    on_exit fn ->
+      Redis.del("token1")
+      Redis.del("token2")
+    end
 
     {:ok, socket_1: socket_1, socket_2: socket_2}
   end
