@@ -18,15 +18,19 @@ defmodule Spell.MessageChannel do
     recipient_id = to_string(message.recipient_id)
 
     message = serialize_message(message)
-    broadcast socket, "message_sent", message
-    Spell.Endpoint.broadcast_from! self(), "messages:" <> recipient_id,
-    "message_received", message
+    broadcast(socket, "message_sent", message)
+    Spell.Endpoint.broadcast_from!(self(), "messages:" <> recipient_id,
+    "message_received", message)
 
     {:noreply, socket}
   end
 
+  def handle_in("message_read", payload, socket) do
+    message_id = payload["message_id"]
+  end
+
   def handle_out(event, payload, socket) do
-    push socket, event, payload
+    push(socket, event, payload)
     {:noreply, socket}
   end
 
@@ -43,5 +47,13 @@ defmodule Spell.MessageChannel do
 
   def serialize_message(message) do
     Map.take(message, [:id, :body, :read, :sender_id, :recipient_id])
+  end
+
+  defp find_received_message(message_id, user_id) do
+    query = Ecto.Query.from m in Message,
+    where: m.id == ^message_id and m.recipient_id == ^user_id,
+    select: m
+    [message] = Repo.all(query)
+    message
   end
 end
