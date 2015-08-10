@@ -7,12 +7,9 @@ defmodule Spell do
     import Supervisor.Spec, warn: false
 
     children = [
-      # Start the endpoint when the application starts
       supervisor(Spell.Endpoint, []),
-      # Start the Ecto repository
       worker(Spell.Repo, []),
-      # Here you could define other workers and supervisors as children
-      # worker(Spell.Worker, [arg1, arg2, arg3]),
+      worker(Spell.Redis, [])
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

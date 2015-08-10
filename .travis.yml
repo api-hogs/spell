@@ -1,5 +1,7 @@
 language: elixir
 otp_release:
-    - 17.4
+  - 17.4
 addons:
-    postgresql: '9.4'
+  postgresql: '9.4'
+services:
+  - redis-server
