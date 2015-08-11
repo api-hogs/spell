@@ -23,4 +23,13 @@ defmodule Spell.Message do
     model
     |> cast(params, @required_fields, @optional_fields)
   end
+
+  def between(user_1_id, user_2_id) do
+    Spell.Repo.all(
+    from m in __MODULE__,
+    where: (m.sender_id == ^user_1_id and m.recipient_id == ^user_2_id) or
+    (m.sender_id == ^user_2_id and m.recipient_id == ^user_1_id),
+    order_by: [asc: :id]
+    )
+  end
 end
