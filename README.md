@@ -1,5 +1,7 @@
 # Spell
 
+{<img src="https://travis-ci.org/api-hogs/spell.svg" alt="Build Status" />}[https://travis-ci.org/api-hogs/spell]
+
 To start your new Phoenix application:
 
 1. Install dependencies with `mix deps.get`
