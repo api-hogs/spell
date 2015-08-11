@@ -13,13 +13,14 @@ defmodule Spell.Router do
   end
 
   scope "/", Spell do
-    pipe_through :browser # Use the default browser stack
+    pipe_through :browser
 
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", Spell do
-  #   pipe_through :api
-  # end
+  scope "/api", Spell do
+    pipe_through :api
+
+    get "/messages", MessageController, :index
+  end
 end
