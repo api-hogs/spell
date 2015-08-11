@@ -1,6 +1,6 @@
 # Spell
 
-{<img src="https://travis-ci.org/api-hogs/spell.svg" alt="Build Status" />}[https://travis-ci.org/api-hogs/spell]
+[![Build Status](https://travis-ci.org/api-hogs/spell.svg)](https://travis-ci.org/api-hogs/spell)
 
 To start your new Phoenix application:
 
