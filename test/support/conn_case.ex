@@ -28,6 +28,8 @@ defmodule Spell.ConnCase do
 
       # The default endpoint for testing
       @endpoint Spell.Endpoint
+
+      import Bureaucrat, only: [doc: 1, doc: 2]
     end
   end
 

@@ -35,6 +35,8 @@ defmodule Spell.Mixfile do
      {:phoenix_html, "~> 1.4"},
      {:phoenix_live_reload, "~> 0.5", only: :dev},
      {:cowboy, "~> 1.0"},
-     {:exredis, ">= 0.2.0"}]
+     {:exredis, ">= 0.2.0"},
+     {:poison, github: "devinus/poison", branch: "master", override: true},
+     {:bureaucrat, path: "~/code/bureaucrat"}]
   end
 end

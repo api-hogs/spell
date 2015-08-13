@@ -20,26 +20,33 @@ defmodule Spell.MessageControllerTest do
   end
 
   test "GET /api/messages without token" do
-    conn = get conn(), "/api/messages"
+    conn = conn()
+            |> get("/api/messages")
+            |> doc
     assert conn.status == 401
   end
 
   test "GET /api/messages with wrong token" do
     conn = conn()
-    |> put_req_header("authorization", "Token token=wrong")
-    |> get "/api/messages"
+            |> put_req_header("authorization", "Token token=wrong")
+            |> get("/api/messages")
+            |> doc
     assert conn.status == 401
   end
 
   test "GET /api/messages with correct token" do
-    conn = get authorized_conn(), "/api/messages"
+    conn = authorized_conn()
+            |> get("/api/messages")
+            |> doc
     assert conn.status == 200
   end
 
   test "GET /api/messages returns chat history" do
     create_message(1, 2)
     create_message(2, 1)
-    conn = get authorized_conn(), "/api/messages?user_id=2"
+    conn = authorized_conn()
+            |> get("/api/messages?user_id=2")
+            |> doc
     {:ok, resp} = Poison.decode(conn.resp_body)
     assert length(resp) == 2
   end

@@ -1,3 +1,5 @@
+ExUnit.configure(formatters: [ExUnit.CLIFormatter, Bureaucrat.Formatter])
+Bureaucrat.start
 ExUnit.start
 
 Mix.Task.run "ecto.create", ["--quiet"]
