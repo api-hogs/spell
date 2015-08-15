@@ -1,8 +1,17 @@
 # API Documentation
 * [Elixir.Spell.MessageController](#Elixir.Spell.MessageController)
-  * [index](#Elixir.Spell.MessageController-index)
+  * [index](#Elixir.Spell.MessageControllerindex)
 ## Elixir.Spell.MessageController
 ### index
+* __Method:__ GET
+* __Path:__ /api/messages
+* __Status__: 401
+* __Response body:__
+```json
+{
+  "error": "unauthorized"
+}
+```
 * __Method:__ GET
 * __Path:__ /api/messages
 * __Status__: 401
@@ -29,24 +38,15 @@
     "sender_id": 1,
     "recipient_id": 2,
     "read": false,
-    "id": 64,
+    "id": 67,
     "body": "Hi"
   },
   {
     "sender_id": 2,
     "recipient_id": 1,
     "read": false,
-    "id": 65,
+    "id": 68,
     "body": "Hi"
   }
 ]
-```
-* __Method:__ GET
-* __Path:__ /api/messages
-* __Status__: 401
-* __Response body:__
-```json
-{
-  "error": "unauthorized"
-}
 ```
