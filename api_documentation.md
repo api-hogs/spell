@@ -1,6 +1,7 @@
 # API Documentation
 * [Elixir.Spell.MessageController](#Elixir.Spell.MessageController)
   * [index](#Elixir.Spell.MessageControllerindex)
+
 ## Elixir.Spell.MessageController
 ### index
 * __Method:__ GET
