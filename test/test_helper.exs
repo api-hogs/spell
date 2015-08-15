@@ -1,6 +1,5 @@
-ExUnit.configure(formatters: [ExUnit.CLIFormatter, Bureaucrat.Formatter])
 Bureaucrat.start
-ExUnit.start
+ExUnit.start(formatters: [ExUnit.CLIFormatter, Bureaucrat.Formatter])
 
 Mix.Task.run "ecto.create", ["--quiet"]
 Mix.Task.run "ecto.migrate", ["--quiet"]
