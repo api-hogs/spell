@@ -6,10 +6,21 @@
 ### Spell.MessageController.index
 * __Method:__ GET
 * __Path:__ /api/messages
-* __Status__: 200
+* __Status__: 401
 * __Response body:__
 ```json
-[]
+{
+  "error": "unauthorized"
+}
+```
+* __Method:__ GET
+* __Path:__ /api/messages
+* __Status__: 401
+* __Response body:__
+```json
+{
+  "error": "unauthorized"
+}
 ```
 * __Method:__ GET
 * __Path:__ /api/messages?user_id=2
@@ -21,33 +32,22 @@
     "sender_id": 1,
     "recipient_id": 2,
     "read": false,
-    "id": 159,
+    "id": 164,
     "body": "Hi"
   },
   {
     "sender_id": 2,
     "recipient_id": 1,
     "read": false,
-    "id": 160,
+    "id": 165,
     "body": "Hi"
   }
 ]
 ```
 * __Method:__ GET
 * __Path:__ /api/messages
-* __Status__: 401
+* __Status__: 200
 * __Response body:__
 ```json
-{
-  "error": "unauthorized"
-}
-```
-* __Method:__ GET
-* __Path:__ /api/messages
-* __Status__: 401
-* __Response body:__
-```json
-{
-  "error": "unauthorized"
-}
+[]
 ```
