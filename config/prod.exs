@@ -9,4 +9,10 @@ config :logger, level: :info
 
 config :phoenix, :serve_endpoints, true
 
+config :spell, Spell.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  username: "postgres",
+  password: "postgres",
+  database: "spell",
+  size: 10
 # import_config "prod.secret.exs"
