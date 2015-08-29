@@ -2,8 +2,7 @@ use Mix.Config
 
 config :spell, Spell.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [host: "example.com", port: 80],
-  cache_static_manifest: "priv/static/manifest.json"
+  url: [host: "example.com", port: 80]
 
 config :logger, level: :info
 
@@ -14,5 +13,4 @@ config :spell, Spell.Repo,
   username: "postgres",
   password: "postgres",
   database: "spell",
-  size: 10
-# import_config "prod.secret.exs"
+  pool_size: 10

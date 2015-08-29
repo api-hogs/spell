@@ -23,4 +23,4 @@ config :spell, Spell.Repo,
   username: "postgres",
   password: "postgres",
   database: "spell_dev",
-  size: 10
+  pool_size: 10

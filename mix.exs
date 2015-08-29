@@ -18,7 +18,7 @@ defmodule Spell.Mixfile do
   def application do
     [mod: {Spell, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :exredis]]
   end
 
   # Specifies which paths to compile per environment
