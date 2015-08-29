@@ -37,6 +37,7 @@ defmodule Spell.Mixfile do
      {:cowboy, "~> 1.0"},
      {:exredis, ">= 0.2.0"},
      {:poison, github: "devinus/poison", branch: "master", override: true},
-     {:bureaucrat, "0.0.4"}]
+     {:bureaucrat, "0.0.4"},
+     {:exrm, "~> 0.15.3"}]
   end
 end

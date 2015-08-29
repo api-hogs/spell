@@ -1,11 +1,5 @@
 use Mix.Config
 
-# For development, we disable any cache and enable
-# debugging and code reloading.
-#
-# The watchers configuration can be used to run external
-# watchers to your application. For example, we use it
-# with brunch.io to recompile .js and .css sources.
 config :spell, Spell.Endpoint,
   http: [port: 4000],
   debug_errors: true,
@@ -13,7 +7,6 @@ config :spell, Spell.Endpoint,
   cache_static_lookup: false,
   watchers: []
 
-# Watch static and templates for browser reloading.
 config :spell, Spell.Endpoint,
   live_reload: [
     patterns: [
@@ -23,13 +16,11 @@ config :spell, Spell.Endpoint,
     ]
   ]
 
-# Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
 
-# Configure your database
 config :spell, Spell.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
   database: "spell_dev",
-  size: 10 # The amount of database connections in the pool
+  size: 10
