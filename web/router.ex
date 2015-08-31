@@ -21,6 +21,8 @@ defmodule Spell.Router do
   scope "/api", Spell do
     pipe_through :api
 
-    get "/messages", MessageController, :index
+    scope "/v1" do
+      get "/messages", MessageController, :index
+    end
   end
 end
