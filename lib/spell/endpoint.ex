@@ -1,7 +1,7 @@
 defmodule Spell.Endpoint do
   use Phoenix.Endpoint, otp_app: :spell
 
-  socket "/api/v1/chat/socket", Spell.UserSocket
+  socket "/api/v1/chat", Spell.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
