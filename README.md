@@ -76,4 +76,4 @@ To send a message, emit a `message_sent` event:
   "ref":"2"
 }
 ```
-This will cause two events to be broadcasted: a `message_received` in the channel of the recipient `messages:2`, and a `message_sent` in the channel of the sender `messages:1`. If a user is logged in on multiple devices, he will receive messages sent by him in `message_sent` events.
+This will cause two events to be broadcasted: a `message_received` in the channel of the recipient `messages:2`, and a `message_sent` in the channel of the sender `messages:1`. If a user is logged in on multiple devices, he will receive messages sent by him from other devices in `message_sent` events.
