@@ -1,8 +1,7 @@
 use Mix.Config
 
 config :spell, Spell.Endpoint,
-  http: [port: {:system, "PORT"}],
-  url: [host: "example.com", port: 80]
+  http: [port: 8888]
 
 config :logger, level: :info
 

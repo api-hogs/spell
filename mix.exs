@@ -29,15 +29,15 @@ defmodule Spell.Mixfile do
   #
   # Type `mix help deps` for examples and options
   defp deps do
-    [{:phoenix, "~> 0.15"},
-     {:phoenix_ecto, "~> 0.8"},
+    [{:phoenix, "~> 1.0.2"},
+     {:phoenix_ecto, "~> 1.2.0"},
      {:postgrex, ">= 0.0.0"},
-     {:phoenix_html, "~> 1.4"},
-     {:phoenix_live_reload, "~> 0.5", only: :dev},
+     {:phoenix_html, "~> 2.2.0"},
+     {:phoenix_live_reload, "~> 1.0.1", only: :dev},
      {:cowboy, "~> 1.0"},
      {:exredis, ">= 0.2.0"},
      {:poison, github: "devinus/poison", branch: "master", override: true},
      {:bureaucrat, "0.0.4"},
-     {:exrm, "~> 0.15.3"}]
+     {:exrm, "~> 0.19.6"}]
   end
 end
