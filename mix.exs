@@ -38,6 +38,7 @@ defmodule Spell.Mixfile do
      {:exredis, ">= 0.2.0"},
      {:poison, github: "devinus/poison", branch: "master", override: true},
      {:bureaucrat, "0.0.4"},
+     {:logger_file_backend, "0.0.5"},
      {:exrm, "~> 0.19.6"}]
   end
 end

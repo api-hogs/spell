@@ -3,7 +3,12 @@ use Mix.Config
 config :spell, Spell.Endpoint,
   http: [port: 8888]
 
-config :logger, level: :info
+config :logger,
+  backends: [{LoggerFileBackend, :error_log}]
+
+config :logger, :error_log,
+  path: "/var/www/spell/production.log",
+  level: :error
 
 config :phoenix, :serve_endpoints, true
 

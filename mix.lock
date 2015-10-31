@@ -11,6 +11,7 @@
   "exrm": {:hex, :exrm, "0.19.6"},
   "fs": {:hex, :fs, "0.9.2"},
   "getopt": {:hex, :getopt, "0.8.2"},
+  "logger_file_backend": {:hex, :logger_file_backend, "0.0.5"},
   "neotoma": {:hex, :neotoma, "1.7.3"},
   "phoenix": {:hex, :phoenix, "1.0.2"},
   "phoenix_ecto": {:hex, :phoenix_ecto, "1.2.0"},
