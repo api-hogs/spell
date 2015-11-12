@@ -1,0 +1,2 @@
+defmodule Spell do
+end
